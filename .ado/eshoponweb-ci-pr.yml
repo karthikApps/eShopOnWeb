@@ -39,17 +39,3 @@ stages:
         command: 'publish'
         publishWebProjects: true
         arguments: '-o $(Build.ArtifactStagingDirectory)'
-    - task: ArtifactoryGenericUpload@2
-      inputs:
-        artifactoryService: 'test-artifactory'
-        specSource: 'taskConfiguration'
-        fileSpec: |
-          {
-            "files": [
-              {
-                "pattern": "*$(Build.ArtifactStagingDirectory)/*.zip",
-                "target": "jfrog-maven-example"
-              }
-            ]
-          }
-        failNoOp: true
