@@ -47,7 +47,7 @@ stages:
           {
             "files": [
               {
-                "pattern": "*.war",
+                "pattern": "*$(Build.ArtifactStagingDirectory)/*.zip",
                 "target": "jfrog-maven-example"
               }
             ]
